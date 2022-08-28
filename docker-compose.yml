@@ -1,0 +1,15 @@
+version: '2'
+services:
+    downloader:
+        image: curlimages/curl
+        container_name: stream-downloader
+        command: /bin/sh download.sh
+        environment:
+            STREAM_LINK: https://n15a-eu.rcs.revma.com/r6hktd84u7zuv
+            FILE_REMOVAL_MTIME: 5
+            FILE_PREFIX: ibiza_
+        user: "1000:1000"
+        volumes:
+            - ./:/app
+        working_dir: /app
+        restart: "unless-stopped"
