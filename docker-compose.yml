@@ -2,7 +2,7 @@ version: '2'
 services:
     downloader:
         image: curlimages/curl
-        container_name: stream-downloader
+        container_name: stream_downloader
         command: /bin/sh download.sh
         environment:
             STREAM_LINK: https://n15a-eu.rcs.revma.com/r6hktd84u7zuv
